@@ -4,8 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prueba técnica</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    
 </head>
 <body>
+
+    <div class="imagenes">
+        <img src="./img/alhambra.jpg" class="img" id="img1" alt="Alhambra">
+        <img src="./img/coach2o.jpg" class="img" id="img2" alt="Coach2o">
+        <img src="./img/porsche.jpg" class="img" id="img3" alt="Porsche">
+        <img src="./img/deep-state.webp" class="img" id="img4" alt="Deep state">
+        <img src="./img/ffuuss.jpg" class="img" id="img5" alt="ffuuss">
+        <img src="./img/roca.jpg" class="img" id="img6" alt="Roca">
+        <img src="./img/zpump.jpg" class="img" id="img7" alt="zpump">
+    </div>
+
+    <div class="container">
+        <div class="marca"   data-img="img1" > Alhambra </div>
+        <div class="marca"   data-img="img2" > Coach2o </div>
+        <div class="marca"   data-img="img3" > Porsche </div>
+        <div class="marca"   data-img="img4" > Deep State </div>
+        <div class="marca"   data-img="img5" > ffuuss </div>
+        <div class="marca"   data-img="img6" > Roca </div>
+        <div class="marca"   data-img="img7" > zpump </div>
+    </div>
+    
+    <script>
+        
+        const marcas = document.querySelectorAll('.marca');
+        const listaImg = document.querySelectorAll('.img');
+
+        marcas.forEach(marca => {
+            marca.addEventListener('mouseover', () => {
+                listaImg.forEach(img => img.style.opacity = 0);
+                const imgId = marca.getAttribute('data-img');
+                document.getElementById(imgId).style.opacity = 1;
+            });
+
+            marca.addEventListener('mouseleave', () => {
+                listaImg.forEach(img => img.style.opacity = 0);
+            });
+        });
+    </script>
+
     
 </body>
 </html>
